@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export async function getStaticProps() {
-  const res = await fetch('http://127.0.0.1:8000/')
+  const res = await fetch(process.env.API_URL)
   const site = await res.json()
 
   return {
@@ -18,7 +18,7 @@ export default function Home({site}) {
     <div className={styles.container}>
       <Head>
         <title>{site.title}</title>
-        <meta name="description" content="Dottore Link" />
+        <meta name="description" content={site.title} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
