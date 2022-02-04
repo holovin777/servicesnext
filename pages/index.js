@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Navbar from '../components/Navbar.js'
+import Link from 'next/link'
 
 export async function getStaticProps() {
   const res = await fetch(process.env.API_URL)
@@ -15,21 +15,21 @@ export async function getStaticProps() {
 
 export default function Home({site}) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>{site.title}</title>
         <meta name="description" content={site.title} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          {site.title}
-        </h1>
+      <main>
+        <Navbar title={site.title} />
+        <Link href="/services">
+          <a>Services</a>
+        </Link>
       </main>
 
-
-      <footer className={styles.footer}>
+      <footer>
         {site.title}
       </footer>
     </div>
