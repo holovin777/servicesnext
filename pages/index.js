@@ -1,14 +1,16 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar.js'
-import Link from 'next/link'
+import NavBar from '../components/NavBar.js'
 
 export async function getStaticProps() {
-  const res = await fetch(process.env.API_URL)
-  const site = await res.json()
+  const resSite = await fetch(process.env.API_URL)
+  const resServices = await fetch(process.env.API_URL + "services")
+  const site = await resSite.json()
+  const services = await resServices.json()
 
   return {
     props: {
       site,
+      services,
     },
   }
 }
@@ -23,10 +25,7 @@ export default function Home({site}) {
       </Head>
 
       <main>
-        <Navbar title={site.title} />
-        <Link href="/services">
-          <a>Services</a>
-        </Link>
+        <NavBar title={site.title} items={site.items} />
       </main>
 
       <footer>
