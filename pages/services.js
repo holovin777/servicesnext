@@ -28,7 +28,7 @@ export default function Services({site, services}) {
         <HomeButton />
         <ul>
           {services.map((service) => (
-            <li>
+            <li key={service.id}>
               {service.text}
             </li>
           ))}
