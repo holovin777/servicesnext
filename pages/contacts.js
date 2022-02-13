@@ -28,7 +28,7 @@ export default function Contacts({site, contacts}) {
         <HomeButton />
         <ul>
           {contacts.map((contact) => (
-            <li>
+            <li key={contact.id}>
               {contact.text}
             </li>
           ))}

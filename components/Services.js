@@ -4,7 +4,7 @@ export default function Services({services}) {
       <ul>
         {
           services.map((service) => (
-            <li>{service.text}</li>
+            <li key={service.id}>{service.text}</li>
           ))
         }
       </ul>
