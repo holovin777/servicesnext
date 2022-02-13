@@ -8,7 +8,7 @@ export default function NavBar({title, items}) {
       </h1>
       <ul>
         {items.map((item) => (
-          <NavItem title = {item.title} url = {item.ui_url} />
+          <NavItem key = {item.id} title = {item.title} url = {item.url} />
         ))}
       </ul>
     </div>
