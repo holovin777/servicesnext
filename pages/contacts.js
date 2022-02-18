@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import HomeButton from '../components/HomeButton.js'
+import NavBar from '../components/NavBar.js'
 
 export async function getStaticProps() {
   const resSite = await fetch(process.env.API_URL)
@@ -25,7 +25,7 @@ export default function Contacts({site, contacts}) {
       </Head>
 
       <main>
-        <HomeButton />
+        <NavBar title={site.title} navItem="Contacts" />
         <ul>
           {contacts.map((contact) => (
             <li key={contact.id}>

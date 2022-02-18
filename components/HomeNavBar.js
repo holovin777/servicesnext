@@ -1,8 +1,7 @@
 import NavItem from '../components/NavItem.js'
 import Link from 'next/link'
-import styles from '../styles/NavItem.module.css'
 
-export default function NavBar({title, navItem}) {
+export default function HomeNavBar({title, items}) {
   return (
     <div>
       <Link href="/">
@@ -10,9 +9,11 @@ export default function NavBar({title, navItem}) {
           {title}
         </h3>
       </Link>
-      <h1 className={styles.navItem}>
-        {navItem}
-      </h1>
+      <ul>
+        {items.map((item) => (
+          <NavItem key={item.id} title={item.title} url={item.url} />
+        ))}
+      </ul>
     </div>
   )
 }

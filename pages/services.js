@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import HomeButton from '../components/HomeButton.js'
+import NavBar from '../components/NavBar.js'
 
 export async function getStaticProps() {
   const resSite = await fetch(process.env.API_URL)
@@ -25,11 +25,11 @@ export default function Services({site, services}) {
       </Head>
 
       <main>
-        <HomeButton />
+        <NavBar title={site.title} navItem="Services" />
         <ul>
           {services.map((service) => (
             <li key={service.id}>
-              {service.text}
+              <h4>{service.text}</h4>
             </li>
           ))}
         </ul>

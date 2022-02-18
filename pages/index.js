@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import NavBar from '../components/NavBar.js'
+import HomeNavBar from '../components/HomeNavBar.js'
 
 export async function getStaticProps() {
   const resSite = await fetch(process.env.API_URL)
@@ -22,7 +22,7 @@ export default function Home({site}) {
       </Head>
 
       <main>
-        <NavBar title={site.title} items={site.items} />
+        <HomeNavBar title={site.title} items={site.items} />
       </main>
 
       <footer>
