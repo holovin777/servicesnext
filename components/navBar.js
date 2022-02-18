@@ -1,4 +1,4 @@
-import NavItem from '../components/NavItem.js'
+import NavItem from '../components/navItem.js'
 import Link from 'next/link'
 import styles from '../styles/NavItem.module.css'
 

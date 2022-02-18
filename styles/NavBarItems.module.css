@@ -1,6 +1,5 @@
-.navItem {
-  text-align: center;
-  animation-duration: 0.1s;
+.navBarItems {
+  animation-duration: 0.2s;
   animation-name: appears;
 }
 

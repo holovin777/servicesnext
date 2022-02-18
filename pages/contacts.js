@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import NavBar from '../components/NavBar.js'
+import NavBar from '../components/navBar'
+import Footer from '../components/footer'
 
 export async function getStaticProps() {
   const resSite = await fetch(process.env.API_URL)
@@ -35,9 +36,7 @@ export default function Contacts({site, contacts}) {
         </ul>
       </main>
 
-      <footer>
-        {site.title}
-      </footer>
+      <Footer siteTitle={site.title} />
     </div>
   )
 }

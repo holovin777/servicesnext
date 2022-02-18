@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import NavBar from '../components/NavBar.js'
+import NavBar from '../components/navBar'
+import Footer from '../components/footer'
+import styles from '../styles/Services.module.css'
 
 export async function getStaticProps() {
   const resSite = await fetch(process.env.API_URL)
@@ -26,7 +28,7 @@ export default function Services({site, services}) {
 
       <main>
         <NavBar title={site.title} navItem="Services" />
-        <ul>
+        <ul className={styles.services}>
           {services.map((service) => (
             <li key={service.id}>
               <h4>{service.text}</h4>
@@ -35,9 +37,7 @@ export default function Services({site, services}) {
         </ul>
       </main>
 
-      <footer>
-        {site.title}
-      </footer>
+      <Footer siteTitle={site.title} />
     </div>
   )
 }
