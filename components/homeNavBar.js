@@ -10,7 +10,7 @@ export default function HomeNavBar({siteTitle, navBarItems}) {
           {siteTitle}
         </h3>
       </Link>
-      <ul class={styles.navBarItems}>
+      <ul className={styles.navBarItems}>
         {navBarItems.map((item) => (
           <NavItem key={item.id} title={item.title} url={item.url} />
         ))}
