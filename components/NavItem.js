@@ -4,7 +4,7 @@ export default function NavItem({title, url}) {
   return (
     <div>
       <Link href={url}>
-        <a>{title}</a>
+        <a><h3>{title}</h3></a>
       </Link>
     </div>
   )
