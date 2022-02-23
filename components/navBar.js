@@ -7,7 +7,7 @@ export default function NavBar({siteTitle, navItem}) {
     <div>
       <Link href="/">
         <h3>
-          {siteTitle}
+          <a>{siteTitle}</a>
         </h3>
       </Link>
       <h1 className={styles.navItem}>
