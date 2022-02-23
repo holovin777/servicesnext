@@ -13,7 +13,7 @@ export default function HomeNavBar({siteTitle, navBarItems}) {
         {navBarItems.map((item) => (
           <li key={item.id}>
             <Link href={item.url}>
-              <a><h3>{item.title}</h3></a>
+              <a><h3>{item.title.charAt(0).toUpperCase() + item.title.slice(1)}</h3></a>
             </Link>
           </li>
         ))}
