@@ -1,4 +1,3 @@
-import NavItem from '../components/navItem.js'
 import Link from 'next/link'
 import styles from '../styles/NavBarItems.module.css'
 
@@ -12,7 +11,9 @@ export default function HomeNavBar({siteTitle, navBarItems}) {
       </Link>
       <ul className={styles.navBarItems}>
         {navBarItems.map((item) => (
-          <NavItem id={item.id} title={item.title} url={item.url} />
+          <Link href={item.url}>
+            <li key={item.id}><a><h3>{item.title}</h3></a></li>
+          </Link>
         ))}
       </ul>
     </div>
