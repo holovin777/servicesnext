@@ -1,4 +1,6 @@
 import NavBar from '../components/navBar'
+import Footer from '../components/footer'
+
 
 export async function getStaticPaths() {
   const res = await fetch(process.env.API_URL)
@@ -13,8 +15,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const rout = params.title
-  const res = await fetch(process.env.API_URL+rout)
+  const pathName = params.title
+  const res = await fetch(process.env.API_URL+pathName)
   const resSite = await fetch(process.env.API_URL)
   const data = await res.json()
   const site = await resSite.json()
@@ -23,15 +25,15 @@ export async function getStaticProps({params}) {
     props: {
       data,
       site,
-      rout
+      pathName
     },
   }
 }
 
-export default function Page({data, site, rout}) {
+export default function Page({data, site, pathName}) {
   return (
     <div>
-      <NavBar siteTitle={site.title} navItem={rout} />
+      <NavBar siteTitle={site.title} navItem={pathName} />
       <ul>
         {data.map((item) => (
           <li key={item.id}>
@@ -39,6 +41,7 @@ export default function Page({data, site, rout}) {
           </li>
         ))}
       </ul>
+      <Footer siteTitle={site.title} />
     </div>
   )
 }
