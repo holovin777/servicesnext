@@ -12,7 +12,7 @@ export default function HomeNavBar({siteTitle, navBarItems}) {
       </Link>
       <ul className={styles.navBarItems}>
         {navBarItems.map((item) => (
-          <NavItem key={item.id} title={item.title} url={item.url} />
+          <NavItem id={item.id} title={item.title} url={item.url} />
         ))}
       </ul>
     </div>
