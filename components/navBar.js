@@ -9,9 +9,11 @@ export default function NavBar({siteTitle, navItem}) {
           <a>{siteTitle}</a>
         </h3>
       </Link>
-      <h1 className={styles.navItem}>
-        {navItem.charAt(0).toUpperCase() + navItem.slice(1)}
-      </h1>
+      <Link href="/">
+        <h1 className={styles.navItem}>
+          {navItem.charAt(0).toUpperCase() + navItem.slice(1)}
+        </h1>
+      </Link>
     </div>
   )
 }
