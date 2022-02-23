@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import HomeNavBar from '../components/homeNavBar.js'
+import HomeNavBar from '../components/homeNavBar'
 import Footer from '../components/footer'
 
 export async function getStaticProps() {

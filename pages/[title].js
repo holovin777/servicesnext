@@ -8,6 +8,7 @@ export async function getStaticPaths() {
   const paths = pages.items.map((page) => ({
     params: { title: page.title.toString() },
   }))
+
   return {
     paths,
     fallback: false
