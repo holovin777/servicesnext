@@ -1,6 +1,6 @@
 import NavBar from '../components/navBar'
 import Footer from '../components/footer'
-
+import Form from '../components/form'
 
 export async function getStaticPaths() {
   const res = await fetch(process.env.API_URL)
@@ -38,7 +38,7 @@ export default function Page({data, site, pathName}) {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            {item.text}
+            {item.text === "Form" ? <Form /> : item.text}
           </li>
         ))}
       </ul>
