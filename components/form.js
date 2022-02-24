@@ -8,7 +8,7 @@ export default function Form() {
     }
 
     const JSONdata = JSON.stringify(data)
-    const endpoint = "http://localhost:8000/" + "form"
+    const endpoint = process.env.API_URL + "form"
 
     const options = {
       method: 'POST',
