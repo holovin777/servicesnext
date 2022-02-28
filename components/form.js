@@ -1,4 +1,4 @@
-export default function Form() {
+export default function Form({api_url}) {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -8,7 +8,7 @@ export default function Form() {
     }
 
     const JSONdata = JSON.stringify(data)
-    const endpoint = process.env.API_URL + "form"
+    const endpoint = api_url + "form"
 
     const options = {
       method: 'POST',
@@ -25,7 +25,7 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="phone">Phone</label>
-      <input type="text" id="phone" name="phone" required />
+      <input type="tel" id="phone" name="phone" required />
 
       <label htmlFor="last">Description</label>
       <input type="text" id="description" name="description" required />

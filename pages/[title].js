@@ -21,24 +21,26 @@ export async function getStaticProps({params}) {
   const resSite = await fetch(process.env.API_URL)
   const data = await res.json()
   const site = await resSite.json()
+  const api_url = process.env.API_URL
 
   return {
     props: {
       data,
       site,
-      pathName
+      pathName,
+      api_url
     },
   }
 }
 
-export default function Page({data, site, pathName}) {
+export default function Page({data, site, pathName, api_url}) {
   return (
     <div>
       <NavBar siteTitle={site.title} navItem={pathName} />
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            {item.text === "Form" ? <Form /> : item.text}
+            {item.text === "Form" ? <Form api_url={api_url} /> : item.text}
           </li>
         ))}
       </ul>
