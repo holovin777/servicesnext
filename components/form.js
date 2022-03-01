@@ -24,10 +24,10 @@ export default function Form({api_url}) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="phone">Phone</label>
+      <label htmlFor="phone">Phone </label>
       <input type="tel" id="phone" name="phone" required />
-
-      <label htmlFor="last">Description</label>
+      <br></br>
+      <label htmlFor="last">Description </label>
       <input type="text" id="description" name="description" required />
 
       <button type="submit">Contact</button>
